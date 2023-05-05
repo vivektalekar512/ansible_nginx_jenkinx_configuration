@@ -1,0 +1,14 @@
+---
+# handlers file for nginx-jenkins-installation
+ - name: Restart Nginx
+   service:
+     name: nginx
+     state: restarted
+ - name: wait for nginx
+   uri:
+     url: http://localhost/
+     return_content: no
+   register: nginx_status
+   until: nginx_status.status == 200
+   retries: 10
+   delay: 2
