@@ -6,13 +6,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 
-                     checkout scmGit(branches: [[name: 'refs/heads/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Aishu937/ansible_nginx_jenkinx.git']])
-                    //git branch: 'refs/heads/main', url: 'https://github.com/Aishu937/ansible_nginx_jenkinx.git'
+                     checkout scmGit(branches: [[name: 'refs/heads/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/vivektalekar512/ansible_nginx_jenkinx_configuration']])
+              
             }
         }
         stage('Ansible Playbook Execution') {
             steps {
-                sh 'ansible-playbook  $WORKSPACE/master.yml'
+                sh 'ansible-playbook  $WORKSPACE/master_playbook.yml'
             }
         }
     }
