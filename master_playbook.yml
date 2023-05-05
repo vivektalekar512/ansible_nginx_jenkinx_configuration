@@ -1,0 +1,7 @@
+---
+- hosts: server
+  user: target1
+  become: yes
+  connection: ssh
+  roles:
+    - nginx-jenkins
