@@ -4,4 +4,4 @@
   become: yes
   connection: ssh
   roles:
-    - nginx-jenkins
+    - nginx-jenkins_config
