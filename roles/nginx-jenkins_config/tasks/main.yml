@@ -71,13 +71,4 @@
   - name: Configure Nginx as reverse proxy for Jenkins
     copy:
       src: jenkins.conf
-      dest: /etc/nginx/conf.d/jenkins.conf
-   
-   - name: Start Nginx and Jenkins services
-     service:
-      name: "{{ item }}"
-      State: started      
-     loop:
-      - nginx
-      - jenkins
-   
+      dest: /etc/nginx/conf.d/jenkins.conf  
