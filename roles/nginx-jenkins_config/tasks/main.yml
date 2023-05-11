@@ -70,10 +70,10 @@
       state: touch
 
   - name: Configure Nginx as reverse proxy for Jenkins
+    copy:
       src: jenkins.conf
-      path: /etc/nginx/conf.d/jenkins.conf
-    
-
+      dest: /etc/nginx/conf.d/jenkins.conf
+   
   - name: Reboot the system
     become: true
     reboot:
